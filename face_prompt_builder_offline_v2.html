@@ -1110,8 +1110,12 @@ function bind(){
     b.onclick = () => {
       const fid = b.dataset.field || b.dataset.face, label = b.dataset.label;
       const f = ALL_FIELDS.find(x => x.id === fid);
-      const opt = f.options.find(o => o.label === label);
-      state.selections[fid] = [opt];
+      const cur = state.selections[fid] || [];
+      if (cur.length === 1 && cur[0].label === label) {
+        state.selections[fid] = []; /* click selected icon again = deselect */
+      } else {
+        state.selections[fid] = [f.options.find(o => o.label === label)];
+      }
       touch();
     };
   });
