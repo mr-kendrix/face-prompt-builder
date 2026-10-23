@@ -43,3 +43,155 @@ All faces are fictional adults (18+); the app never depicts real people.
 ## License
 
 Free for personal, hobby and student use — **not licensed for commercial use**.
+
+---
+
+<details>
+<summary>🇩🇪 Deutsch</summary>
+
+**Was ist das?** Wähle in **17 Abschnitten** — Gesichtsform, Haare, Augen, Kosmetik, Stil & Ausstrahlung, Licht, Kamera, Kopfhaltung… — und die App baut daraus einen detaillierten **englischen Prompt** für Bildmodelle (Stable Diffusion, Krea 2, moderne Bild-LLMs). **474 handgezeichnete Icons** machen jede Option auf einen Blick sichtbar.
+
+**Schnellstart**
+1. `face_prompt_builder_offline_v2.html` herunterladen (oder Repo klonen)
+2. In jedem modernen Browser öffnen — Chrome, Firefox, Safari, Edge
+3. Optionen wählen (oder 🎲 würfeln), Prompt kopieren, ins Bildtool einfügen
+
+Kein Server. Kein Internet. Kein Konto. Keine Installation.
+
+**Features**
+- **17 Abschnitte, 474 Icon-Optionen** — Einzel- und Mehrfachauswahl, jede Kategorie lässt sich mit einem Klick überspringen
+- **🎲 Zufalls-Würfel** — alles neu würfeln, oder nur die leeren Slots füllen (deine Auswahl bleibt fixiert)
+- **✍️ Krea-2-Optimierer** — schreibt die Tag-Liste als Szenenbeschreibung in natürlicher Sprache um
+- **🔁 Reverse Engineer** — eigenen englischen Prompt einfügen, die App mappt ihn auf ihren eigenen Wortschatz (per lokalem LLM, z. B. LM Studio)
+- **💾 Gespeicherte Rezepte** — unbegrenzt viele Presets, gespeichert auf deinem Gerät
+- **🧊 3D-Preview der Kopfhaltung**
+- **🌍 6 UI-Sprachen** (EN, DE, FR, ES, RU, ZH) — der generierte Prompt ist immer Englisch
+- **🌑 Light- & Darkmode**
+
+**Voraussetzungen**: Ein moderner Browser — das ist alles. *Optional:* [LM Studio](https://lmstudio.ai) oder jede OpenAI-kompatible lokale API, nur für den Reverse-Engineering-Modus.
+Alle Gesichter sind fiktive Erwachsene (18+); die App stellt nie echte Personen dar.
+
+**Status**: **V2 — stabil.** Alle 17 Abschnitte mit voller Icon-Abdeckung, läuft komplett offline. Aktive Weiterentwicklung — Issues und PRs willkommen.
+
+**Lizenz**: Kostenlos für private, Hobby- und Studienzwecke — **keine kommerzielle Lizenz**.
+</details>
+
+<details>
+<summary>🇫🇷 Français</summary>
+
+**C'est quoi ?** Choisissez des options dans **17 sections** — forme du visage, cheveux, yeux, maquillage, style, éclairage, caméra, pose de la tête… — et l'application compose un **prompt anglais** détaillé pour les modèles d'image (Stable Diffusion, Krea 2, LLM d'image modernes). **474 icônes dessinées à la main** rendent chaque option visible d'un coup d'œil.
+
+**Démarrage rapide**
+1. Télécharger `face_prompt_builder_offline_v2.html` (ou cloner le repo)
+2. L'ouvrir dans n'importe quel navigateur moderne — Chrome, Firefox, Safari, Edge
+3. Choisir des options (ou lancer le 🎲), copier le prompt, le coller dans votre outil d'image
+
+Aucun serveur. Aucun internet. Aucun compte. Aucune installation.
+
+**Fonctionnalités**
+- **17 sections, 474 options avec icônes** — sélection simple et multiple, chaque catégorie se passe d'un clic
+- **🎲 Lancer aléatoire** — tout relancer, ou ne remplir que les cases vides (vos choix restent fixés)
+- **✍️ Optimiseur Krea-2** — réécrit la liste de tags en description de scène en langage naturel
+- **🔁 Rétro-ingénierie** — collez votre propre prompt anglais, l'application le mappe sur son propre vocabulaire (via un LLM local, ex. LM Studio)
+- **💾 Recettes enregistrées** — presets illimités, stockés sur votre appareil
+- **🧊 Aperçu 3D de la pose de la tête**
+- **🌍 6 langues d'interface** (EN, DE, FR, ES, RU, ZH) — le prompt généré est toujours en anglais
+- **🌑 Mode clair & sombre**
+
+**Prérequis** : un navigateur web moderne — c'est tout. *Optionnel :* [LM Studio](https://lmstudio.ai) ou toute API locale compatible OpenAI, uniquement pour le mode rétro-ingénierie.
+Tous les visages sont des adultes fictifs (18+) ; l'application ne représente jamais de vraies personnes.
+
+**Statut** : **V2 — stable.** Les 17 sections avec couverture icônes complète, 100 % hors ligne. Maintenance active — issues et PR bienvenues.
+
+**Licence** : Gratuit pour un usage personnel, loisir et étudiant — **pas de licence commerciale**.
+</details>
+
+<details>
+<summary>🇪🇸 Español</summary>
+
+**¿Qué es?** Elige opciones en **17 secciones** — forma del rostro, pelo, ojos, maquillaje, estilo, iluminación, cámara, pose de la cabeza… — y la aplicación compone un **prompt en inglés** detallado para modelos de imagen (Stable Diffusion, Krea 2, LLM de imagen modernos). **474 iconos dibujados a mano** hacen que cada opción sea visible de un vistazo.
+
+**Inicio rápido**
+1. Descarga `face_prompt_builder_offline_v2.html` (o clona el repo)
+2. Ábrelo en cualquier navegador moderno — Chrome, Firefox, Safari, Edge
+3. Elige opciones (o lanza el 🎲), copia el prompt y pégalo en tu herramienta de imagen
+
+Sin servidor. Sin internet. Sin cuenta. Sin instalación.
+
+**Características**
+- **17 secciones, 474 opciones con iconos** — selección simple y múltiple, cada categoría se puede omitir con un clic
+- **🎲 Sorteo aleatorio** — relanzar todo, o rellenar solo las casillas vacías (tus elecciones quedan fijas)
+- **✍️ Optimizador Krea-2** — reescribe la lista de etiquetas como descripción de escena en lenguaje natural
+- **🔁 Ingeniería inversa** — pega tu propio prompt en inglés y la aplicación lo mapea a su propio vocabulario (vía LLM local, p. ej. LM Studio)
+- **💾 Recetas guardadas** — presets ilimitados, almacenados en tu dispositivo
+- **🧊 Vista previa 3D de la pose de la cabeza**
+- **🌍 6 idiomas de interfaz** (EN, DE, FR, ES, RU, ZH) — el prompt generado siempre es en inglés
+- **🌑 Modo claro y oscuro**
+
+**Requisitos**: un navegador web moderno — eso es todo. *Opcional:* [LM Studio](https://lmstudio.ai) o cualquier API local compatible con OpenAI, solo para el modo de ingeniería inversa.
+Todos los rostros son adultos ficticios (18+); la aplicación nunca representa personas reales.
+
+**Estado**: **V2 — estable.** Las 17 secciones con cobertura completa de iconos; todo funciona sin conexión. Mantenimiento activo — issues y PR bienvenidos.
+
+**Licencia**: Gratis para uso personal, aficionado y estudiantil — **sin licencia comercial**.
+</details>
+
+<details>
+<summary>🇷🇺 Русский</summary>
+
+**Что это?** Выбирайте опции в **17 разделах** — форма лица, волосы, глаза, макияж, стиль, свет, камера, поза головы… — и приложение собирает из этого подробный **английский промпт** для моделей генерации изображений (Stable Diffusion, Krea 2, современные image-LLM). **474 рисованных иконки** делают каждый вариант понятным с первого взгляда.
+
+**Быстрый старт**
+1. Скачайте `face_prompt_builder_offline_v2.html` (или клонируйте репозиторий)
+2. Откройте в любом современном браузере — Chrome, Firefox, Safari, Edge
+3. Выберите опции (или бросьте 🎲), скопируйте промпт и вставьте в ваш инструмент генерации
+
+Без сервера. Без интернета. Без аккаунта. Без установки.
+
+**Возможности**
+- **17 разделов, 474 опций с иконками** — одиночный и множественный выбор, любой раздел можно пропустить одним кликом
+- **🎲 Случайный ролл** — перебросить всё, или заполнить только пустые слоты (ваши выборы остаются закреплёнными)
+- **✍️ Оптимизатор Krea-2** — переписывает список тегов в описание сцены естественным языком
+- **🔁 Обратная инженерия** — вставьте свой английский промпт, приложение отобразит его на собственном словаре (через локальную LLM, например LM Studio)
+- **💾 Сохранённые рецепты** — неограниченное число пресетов, хранятся на вашем устройстве
+- **🧊 3D-превью позы головы**
+- **🌍 6 языков интерфейса** (EN, DE, FR, ES, RU, ZH) — генерируемый промпт всегда на английском
+- **🌑 Светлая и тёмная темы**
+
+**Требования**: современный браузер — и всё. *Необязательно:* [LM Studio](https://lmstudio.ai) или любой локальный API, совместимый с OpenAI, только для режима обратной инженерии.
+Все лица — вымышленные взрослые (18+); приложение никогда не изображает реальных людей.
+
+**Статус**: **V2 — стабильная.** Все 17 разделов с полным покрытием иконок; всё работает офлайн. Активная разработка — issues и PR приветствуются.
+
+**Лицензия**: Бесплатно для личного, хобби и студенческого использования — **без коммерческой лицензии**.
+</details>
+
+<details>
+<summary>🇨🇳 中文</summary>
+
+**这是什么？** 在 **17 个分区** 中挑选选项——脸型、发型、眼睛、妆容、风格气质、光线、镜头、头部姿态……——应用会为你生成一条详细的**英文提示词**，适用于图像模型（Stable Diffusion、Krea 2 及现代图像 LLM）。**474 个手绘图标**让每个选项一目了然。
+
+**快速上手**
+1. 下载 `face_prompt_builder_offline_v2.html`（或克隆本仓库）
+2. 用任意现代浏览器打开——Chrome、Firefox、Safari、Edge
+3. 选择选项（或掷骰子 🎲），复制提示词，粘贴到你的图像工具中
+
+无需服务器。无需联网。无需账号。无需安装。
+
+**功能**
+- **17 个分区、474 个带图标的选项**——单选/多选，每个分区都可一键跳过
+- **🎲 随机生成**——全部重掷，或只填充空选项（已选内容保持不变）
+- **✍️ Krea-2 优化器**——将标签列表改写为自然语言的场景描述
+- **🔁 反向解析**——粘贴你自己的英文提示词，应用会将其映射到自己的词库（通过本地 LLM，如 LM Studio）
+- **💾 已保存配方**——无限量预设，存储在你的设备上
+- **🧊 头部姿态 3D 预览**
+- **🌍 6 种界面语言**（EN、DE、FR、ES、RU、ZH）——生成的提示词始终为英文
+- **🌑 浅色 / 深色模式**
+
+**要求**：一个现代浏览器——就这些。*可选*：[LM Studio](https://lmstudio.ai) 或任何 OpenAI 兼容的本地 API，仅用于反向解析模式。
+所有面孔均为虚构成人（18+）；本应用绝不描绘真实人物。
+
+**状态**：**V2 — 稳定版。** 17 个分区全部配备图标，完全离线运行。持续维护中——欢迎提交 issue 和 PR。
+
+**许可**：免费用于个人、爱好和学习用途——**不授权商业用途**。
+</details>
