@@ -86,9 +86,13 @@ html.dark .swatch-opt:not(.on){background:#52525b}
 .bbar-actions .btn-icon#roll-keep{border:2px solid #8b5cf6;color:#8b5cf6}
 /* left rail navigation: one dash per section, visible sections highlighted */
 .rail{position:fixed;left:calc(50% + 24rem + 14px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-start;gap:12px;z-index:30}
-.rail-dash{width:16px;height:2px;border-radius:2px;background:var(--border);border:0;padding:0;cursor:pointer;transition:all .18s}
-.rail-dash:hover{background:var(--muted-fg)}
-.rail-dash.on{width:28px;height:5px;background:#3b82f6;box-shadow:0 0 8px rgba(59,130,246,.45)}
+.rail-dash{position:relative;width:32px;height:18px;background:transparent;border:0;padding:0;cursor:pointer}
+.rail-dash::after{content:"";display:block;width:16px;height:2px;border-radius:2px;background:var(--border);margin-top:8px;transition:all .18s}
+.rail-dash:hover::after{background:var(--muted-fg)}
+.rail-dash.on::after{width:28px;height:5px;margin-top:6.5px;background:#3b82f6;box-shadow:0 0 8px rgba(59,130,246,.45)}
+/* instant CSS tooltip (native title tooltips are ~1s delayed) */
+.rail-dash::before{content:attr(data-tip);position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);background:var(--fg);color:var(--card);font-size:.75rem;line-height:1;padding:.3rem .55rem;border-radius:.375rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .08s;z-index:1}
+.rail-dash:hover::before{opacity:1}
 @media (max-width:1100px){.rail{display:none}}
 /* bottom bar */
 .bbar{position:fixed;inset-inline:0;bottom:0;z-index:40;background:color-mix(in srgb, var(--card) 95%, transparent);backdrop-filter:blur(8px);border-top:1px solid var(--border);box-shadow:0 -8px 24px rgba(15,23,42,.08)}
@@ -269,6 +273,7 @@ function setLang(l){
   applyStaticI18n();
   renderAll();
   updateBar();
+  if (window.__railRefresh) window.__railRefresh();
 }
 function applyStaticI18n(){
   document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = T(el.dataset.i18n); });
@@ -1566,7 +1571,7 @@ renderAll();
     const b = document.createElement('button');
     b.className = 'rail-dash';
     b.dataset.sec = sec.id;
-    b.title = T(sec.title);
+    b.dataset.tip = T(sec.title);
     b.setAttribute('aria-label', T(sec.title));
     b.onclick = () => document.getElementById('sec-' + sec.id)?.scrollIntoView({behavior: 'smooth', block: 'start'});
     nav.appendChild(b);
@@ -1588,6 +1593,8 @@ renderAll();
   const queue = () => { if (!raf) raf = requestAnimationFrame(upd); };
   addEventListener('scroll', queue, {passive: true});
   addEventListener('resize', queue);
+  /* re-translate tooltips/labels after a language switch */
+  window.__railRefresh = () => { for (let i = 0; i < SECTIONS.length; i++){ const d = nav.children[i]; if (!d) continue; d.dataset.tip = T(SECTIONS[i].title); d.setAttribute('aria-label', T(SECTIONS[i].title)); } };
   upd();
 })();
 </script>
