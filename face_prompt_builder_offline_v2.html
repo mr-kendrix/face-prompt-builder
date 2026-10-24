@@ -294,8 +294,6 @@ const VALID_BYP = new Set(SECTIONS.map(s => s.id).concat(ALL_FIELDS.map(f => f.i
 state.bypassed = (Array.isArray(state.bypassed) ? state.bypassed : []).filter(id => VALID_BYP.has(id));
 const SEC_OF = {};
 for (const s of SECTIONS) for (const f of s.fields) SEC_OF[f.id] = s.id;
-/* bypass is section-level only — migrate old per-field entries to their section */
-state.bypassed = [...new Set(state.bypassed.map(id => SEC_OF[id] || id))];
 const isBypassed = fid => state.bypassed.includes(fid) || state.bypassed.includes(SEC_OF[fid]);
 const BYP_TIP = 'Bypass — nothing from this category goes into the prompt';
 
@@ -751,9 +749,11 @@ const selOf = id => state.selections[id] || [];
 function renderField(f){
   let h = '';
   const by = isBypassed(f.id);
+  /* single-field sections: field header is redundant with the section header -> no field-level ⛔ */
+  const bbtn = (SEC_OF[f.id] === 'framing' || SEC_OF[f.id] === 'facialHair' || SEC_OF[f.id] === 'asymmetry') ? '' : `<button class="bypass${by ? ' on' : ''}" data-bypass="${f.id}" title="${esc(T(BYP_TIP))}" aria-label="${esc(T(BYP_TIP))}">⛔</button>`;
   if (f.type === 'text'){
     const cur = (selOf(f.id) || [])[0];
-    h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label for="in-${f.id}">${esc(T(f.label))}</label></div>`;
+    h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label for="in-${f.id}">${esc(T(f.label))}</label>${bbtn}</div>`;
     if (f.hint) h += `<p class="hint">${esc(T(f.hint))}</p>`;
     h += `<input type="text" id="in-${f.id}" data-text="${f.id}" placeholder="${esc(T(f.placeholder||''))}" value="${esc(cur ? cur.label : '')}"/></div>`;
     return h;
@@ -763,7 +763,7 @@ function renderField(f){
     if (f.id === 'lipstick'){
       const cur = selOf(f.id)[0];
       const colors = SWATCHES[f.id];
-      h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label>${esc(T(f.label))}</label></div>`;
+      h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label>${esc(T(f.label))}</label>${bbtn}</div>`;
       if (f.hint) h += `<p class="hint">${esc(T(f.hint))}</p>`;
       h += `<div class="swatch-grid">`;
       for (const o of f.options){
@@ -777,7 +777,7 @@ function renderField(f){
     }
     if (icons){
       const cur = selOf(f.id)[0];
-      h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label>${esc(T(f.label))}</label></div>`;
+      h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label>${esc(T(f.label))}</label>${bbtn}</div>`;
       if (f.hint) h += `<p class="hint">${esc(T(f.hint))}</p>`;
       h += `<div class="shape-grid">`;
       for (const o of f.options){
@@ -792,7 +792,7 @@ function renderField(f){
     if (f.id === 'eyeColor'){
       const cur = selOf(f.id)[0];
       const colors = SWATCHES[f.id];
-      h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label>${esc(T(f.label))}</label></div>`;
+      h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label>${esc(T(f.label))}</label>${bbtn}</div>`;
       if (f.hint) h += `<p class="hint">${esc(T(f.hint))}</p>`;
       h += `<div class="swatch-grid">`;
       for (const o of f.options){
@@ -812,7 +812,7 @@ function renderField(f){
     }
     if (colors){
       const cur = selOf(f.id)[0];
-      h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label>${esc(T(f.label))}</label></div>`;
+      h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label>${esc(T(f.label))}</label>${bbtn}</div>`;
       if (f.hint) h += `<p class="hint">${esc(T(f.hint))}</p>`;
       h += `<div class="swatch-grid">`;
       for (const o of f.options){
@@ -829,7 +829,7 @@ function renderField(f){
       return h;
     }
     const cur = selOf(f.id)[0];
-    h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label for="sel-${f.id}">${esc(T(f.label))}</label></div>`;
+    h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label for="sel-${f.id}">${esc(T(f.label))}</label>${bbtn}</div>`;
     if (f.hint) h += `<p class="hint">${esc(T(f.hint))}</p>`;
     h += `<select id="sel-${f.id}" data-select="${f.id}"><option value="">—</option>`;
     for (const o of f.options) h += `<option value="${esc(o.label)}"${cur && cur.label === o.label ? ' selected' : ''}>${esc(T(o.label))}</option>`;
@@ -839,7 +839,7 @@ function renderField(f){
   /* multiselect */
   const sel = selOf(f.id);
   const msIcons = ICONS[f.id];
-  h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label>${esc(T(f.label))}</label></div>`;
+  h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label>${esc(T(f.label))}</label>${bbtn}</div>`;
   if (f.hint) h += `<p class="hint">${esc(T(f.hint))}</p>`;
   if (msIcons){
     h += `<div class="shape-grid">`;
