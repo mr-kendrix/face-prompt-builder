@@ -12,8 +12,8 @@ Pick options across **17 sections** — face shape, hair, eyes, cosmetics, style
 
 ## Quick start
 
-1. Grab `face_prompt_builder_offline_v2.html` (download or clone this repo)
-2. Open it in any modern browser — Chrome, Firefox, Safari, Edge
+1. [⬇️ Download the app (ZIP)](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) and unzip it
+2. Open `face_prompt_builder_offline_v2.html` (in the unzipped folder) in any modern browser — Chrome, Firefox, Safari, Edge
 3. Pick options (or roll the 🎲), copy the prompt, paste it into your image tool
 
 No server. No internet. No account. No install.
@@ -52,8 +52,8 @@ Free for personal, hobby and student use — **not licensed for commercial use**
 **Was ist das?** Wähle in **17 Abschnitten** — Gesichtsform, Haare, Augen, Kosmetik, Stil & Ausstrahlung, Licht, Kamera, Kopfhaltung… — und die App baut daraus einen detaillierten **englischen Prompt** für Bildmodelle (Stable Diffusion, Krea 2, moderne Bild-LLMs). **474 handgezeichnete Icons** machen jede Option auf einen Blick sichtbar.
 
 **Schnellstart**
-1. `face_prompt_builder_offline_v2.html` herunterladen (oder Repo klonen)
-2. In jedem modernen Browser öffnen — Chrome, Firefox, Safari, Edge
+1. [⬇️ App als ZIP herunterladen](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) und entpacken
+2. `face_prompt_builder_offline_v2.html` (im entpackten Ordner) in jedem modernen Browser öffnen — Chrome, Firefox, Safari, Edge
 3. Optionen wählen (oder 🎲 würfeln), Prompt kopieren, ins Bildtool einfügen
 
 Kein Server. Kein Internet. Kein Konto. Keine Installation.
@@ -82,8 +82,8 @@ Alle Gesichter sind fiktive Erwachsene (18+); die App stellt nie echte Personen 
 **C'est quoi ?** Choisissez des options dans **17 sections** — forme du visage, cheveux, yeux, maquillage, style, éclairage, caméra, pose de la tête… — et l'application compose un **prompt anglais** détaillé pour les modèles d'image (Stable Diffusion, Krea 2, LLM d'image modernes). **474 icônes dessinées à la main** rendent chaque option visible d'un coup d'œil.
 
 **Démarrage rapide**
-1. Télécharger `face_prompt_builder_offline_v2.html` (ou cloner le repo)
-2. L'ouvrir dans n'importe quel navigateur moderne — Chrome, Firefox, Safari, Edge
+1. [⬇️ Télécharger l'application (ZIP)](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) et l'extraire
+2. Ouvrir `face_prompt_builder_offline_v2.html` (dans le dossier extrait) dans n'importe quel navigateur moderne — Chrome, Firefox, Safari, Edge
 3. Choisir des options (ou lancer le 🎲), copier le prompt, le coller dans votre outil d'image
 
 Aucun serveur. Aucun internet. Aucun compte. Aucune installation.
@@ -112,8 +112,8 @@ Tous les visages sont des adultes fictifs (18+) ; l'application ne représente j
 **¿Qué es?** Elige opciones en **17 secciones** — forma del rostro, pelo, ojos, maquillaje, estilo, iluminación, cámara, pose de la cabeza… — y la aplicación compone un **prompt en inglés** detallado para modelos de imagen (Stable Diffusion, Krea 2, LLM de imagen modernos). **474 iconos dibujados a mano** hacen que cada opción sea visible de un vistazo.
 
 **Inicio rápido**
-1. Descarga `face_prompt_builder_offline_v2.html` (o clona el repo)
-2. Ábrelo en cualquier navegador moderno — Chrome, Firefox, Safari, Edge
+1. [⬇️ Descarga la aplicación (ZIP)](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) y descomprímela
+2. Abre `face_prompt_builder_offline_v2.html` (en la carpeta descomprimida) en cualquier navegador moderno — Chrome, Firefox, Safari, Edge
 3. Elige opciones (o lanza el 🎲), copia el prompt y pégalo en tu herramienta de imagen
 
 Sin servidor. Sin internet. Sin cuenta. Sin instalación.
@@ -142,8 +142,8 @@ Todos los rostros son adultos ficticios (18+); la aplicación nunca representa p
 **Что это?** Выбирайте опции в **17 разделах** — форма лица, волосы, глаза, макияж, стиль, свет, камера, поза головы… — и приложение собирает из этого подробный **английский промпт** для моделей генерации изображений (Stable Diffusion, Krea 2, современные image-LLM). **474 рисованных иконки** делают каждый вариант понятным с первого взгляда.
 
 **Быстрый старт**
-1. Скачайте `face_prompt_builder_offline_v2.html` (или клонируйте репозиторий)
-2. Откройте в любом современном браузере — Chrome, Firefox, Safari, Edge
+1. [⬇️ Скачайте приложение (ZIP)](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) и распакуйте его
+2. Откройте `face_prompt_builder_offline_v2.html` (из распакованной папки) в любом современном браузере — Chrome, Firefox, Safari, Edge
 3. Выберите опции (или бросьте 🎲), скопируйте промпт и вставьте в ваш инструмент генерации
 
 Без сервера. Без интернета. Без аккаунта. Без установки.
@@ -172,8 +172,8 @@ Todos los rostros son adultos ficticios (18+); la aplicación nunca representa p
 **这是什么？** 在 **17 个分区** 中挑选选项——脸型、发型、眼睛、妆容、风格气质、光线、镜头、头部姿态……——应用会为你生成一条详细的**英文提示词**，适用于图像模型（Stable Diffusion、Krea 2 及现代图像 LLM）。**474 个手绘图标**让每个选项一目了然。
 
 **快速上手**
-1. 下载 `face_prompt_builder_offline_v2.html`（或克隆本仓库）
-2. 用任意现代浏览器打开——Chrome、Firefox、Safari、Edge
+1. [⬇️ 下载应用（ZIP）](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) 并解压
+2. 用任意现代浏览器打开解压后文件夹中的 `face_prompt_builder_offline_v2.html`——Chrome、Firefox、Safari、Edge
 3. 选择选项（或掷骰子 🎲），复制提示词，粘贴到你的图像工具中
 
 无需服务器。无需联网。无需账号。无需安装。
