@@ -1204,7 +1204,7 @@ document.getElementById('krea2-wand').onclick = () => {
 };
 document.getElementById('reset').onclick = () => {
   state.selections = JSON.parse(JSON.stringify(FRAMING_DEF));
-  state.bypassed = [];
+  /* bypassed sections stay — they are user decisions, not selections */
   state.manualPrompt = null;
   save(); renderAll();
   toast(T('Cleared'), T('All selections reset for a new face.'));
