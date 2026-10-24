@@ -97,10 +97,10 @@ html.dark .swatch-opt:not(.on){background:#52525b}
 .rail-dash:hover::after{background:var(--muted-fg)}
 .rail-dash.on::after{width:28px;height:5px;margin-top:6.5px;background:#3b82f6;box-shadow:0 0 8px rgba(59,130,246,.45)}
 /* bypassed sections: dashed + darkened (dashed reads as "off" in both themes) */
-.rail-dash.bypass::after{background:repeating-linear-gradient(90deg,#3f3f46 0 5px,transparent 5px 9px)}
-html.dark .rail-dash.bypass::after{background:repeating-linear-gradient(90deg,#71717a 0 5px,transparent 5px 9px)}
-.rail-dash.bypass.on::after{box-shadow:none;background:repeating-linear-gradient(90deg,#1e40af 0 6px,transparent 6px 10px)}
-html.dark .rail-dash.bypass.on::after{background:repeating-linear-gradient(90deg,#1d4ed8 0 6px,transparent 6px 10px)}
+.rail-dash.rail-bypass::after{background:repeating-linear-gradient(90deg,#3f3f46 0 5px,transparent 5px 9px)}
+html.dark .rail-dash.rail-bypass::after{background:repeating-linear-gradient(90deg,#71717a 0 5px,transparent 5px 9px)}
+.rail-dash.rail-bypass.on::after{box-shadow:none;background:repeating-linear-gradient(90deg,#1e40af 0 6px,transparent 6px 10px)}
+html.dark .rail-dash.rail-bypass.on::after{background:repeating-linear-gradient(90deg,#1d4ed8 0 6px,transparent 6px 10px)}
 /* instant CSS tooltip (native title tooltips are ~1s delayed) */
 .rail-dash::before{content:attr(data-tip);position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);background:var(--fg);color:var(--card);font-size:.75rem;line-height:1;padding:.3rem .55rem;border-radius:.375rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .08s;z-index:1}
 .rail-dash:hover::before{opacity:1}
@@ -320,7 +320,7 @@ const VALID_BYP = new Set(SECTIONS.map(s => s.id).concat(ALL_FIELDS.map(f => f.i
 state.bypassed = (Array.isArray(state.bypassed) ? state.bypassed : []).filter(id => VALID_BYP.has(id));
 const SEC_OF = {};
 for (const s of SECTIONS) for (const f of s.fields) SEC_OF[f.id] = s.id;
-const isBypassed = fid => state.bypassed.includes(fid) || state.bypassed.includes(SEC_OF[fid]);
+const isBypassed = fid => state.bypassed.includes(fid) || (SEC_OF[fid] && state.bypassed.includes(SEC_OF[fid]));
 const BYP_TIP = 'Bypass — nothing from this category goes into the prompt';
 
 function save(){ try { localStorage.setItem(STATE_KEY, JSON.stringify(state)); } catch(e){} }
@@ -1121,10 +1121,11 @@ function updateBar(){
 
 /* ===================== binding ===================== */
 function bind(){
-  document.querySelectorAll('.bypass').forEach(b => {
+  document.querySelectorAll('#main .bypass').forEach(b => {
     b.onclick = e => {
       e.stopPropagation();
       const id = b.dataset.bypass;
+      if (!id || !VALID_BYP.has(id)) return;
       const i = state.bypassed.indexOf(id);
       if (i >= 0) state.bypassed.splice(i, 1); else state.bypassed.push(id);
       touch();
@@ -1589,7 +1590,7 @@ renderAll();
     b.className = 'rail-dash';
     b.dataset.sec = sec.id;
     const by = state.bypassed.includes(sec.id);
-    if (by) b.classList.add('bypass');
+    if (by) b.classList.add('rail-bypass');
     b.dataset.tip = tip(sec.title, by);
     b.setAttribute('aria-label', tip(sec.title, by));
     b.onclick = () => document.getElementById('sec-' + sec.id)?.scrollIntoView({behavior: 'smooth', block: 'start'});
@@ -1613,7 +1614,7 @@ renderAll();
   addEventListener('scroll', queue, {passive: true});
   addEventListener('resize', queue);
   /* re-translate tooltips/labels + bypass state after language switch / bypass toggle */
-  window.__railRefresh = () => { for (let i = 0; i < SECTIONS.length; i++){ const d = nav.children[i]; if (!d) continue; const by = state.bypassed.includes(SECTIONS[i].id); d.classList.toggle('bypass', by); const t = tip(SECTIONS[i].title, by); d.dataset.tip = t; d.setAttribute('aria-label', t); } };
+  window.__railRefresh = () => { for (let i = 0; i < SECTIONS.length; i++){ const d = nav.children[i]; if (!d) continue; const by = state.bypassed.includes(SECTIONS[i].id); d.classList.toggle('rail-bypass', by); const t = tip(SECTIONS[i].title, by); d.dataset.tip = t; d.setAttribute('aria-label', t); } };
   upd();
 })();
 </script>
