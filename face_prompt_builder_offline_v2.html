@@ -84,6 +84,11 @@ html.dark .swatch-opt:not(.on){background:#52525b}
 .field.bypassed{opacity:.38;filter:grayscale(.7)}
 .card.bypassed .sec-sub{opacity:.5}
 .card.bypassed .sec-title{opacity:.38;filter:grayscale(.7)}
+/* bypassed = inactive: options must not be clickable (they looked dead but still toggled), only the ⛔ buttons stay live */
+.card.bypassed{pointer-events:none}
+.card.bypassed .bypass{pointer-events:auto}
+.field.bypassed{pointer-events:none}
+.field.bypassed .bypass{pointer-events:auto}
 .bbar-actions .btn-icon#roll-keep{border:2px solid #8b5cf6;color:#8b5cf6}
 /* left rail navigation: one dash per section, visible sections highlighted */
 .rail{position:fixed;left:calc(50% + 24rem + 14px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-start;gap:12px;z-index:30}
@@ -296,6 +301,8 @@ try {
   if (s) {
     state.selections = s.selections || {};
     state.manualPrompt = s.manualPrompt ?? null;
+    /* bypass settings survive reloads (filtering by VALID_BYP happens below, after its definition) */
+    state.bypassed = Array.isArray(s.bypassed) ? s.bypassed.slice() : [];
   }
   recipes = JSON.parse(localStorage.getItem(RECIPES_KEY) || '[]');
 } catch(e) {}
