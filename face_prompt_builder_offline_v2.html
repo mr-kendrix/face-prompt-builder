@@ -84,6 +84,12 @@ html.dark .swatch-opt:not(.on){background:#52525b}
 .field.bypassed{opacity:.38;filter:grayscale(.7)}
 .card.bypassed .sec-sub{opacity:.5}
 .bbar-actions .btn-icon#roll-keep{border:2px solid #8b5cf6;color:#8b5cf6}
+/* left rail navigation: one dash per section, visible sections highlighted */
+.rail{position:fixed;left:14px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-start;gap:10px;z-index:30}
+.rail-dash{width:16px;height:2px;border-radius:2px;background:var(--border);border:0;padding:0;cursor:pointer;transition:all .18s}
+.rail-dash:hover{background:var(--muted-fg)}
+.rail-dash.on{width:28px;height:5px;background:#3b82f6;box-shadow:0 0 8px rgba(59,130,246,.45)}
+@media (max-width:1100px){.rail{display:none}}
 /* bottom bar */
 .bbar{position:fixed;inset-inline:0;bottom:0;z-index:40;background:color-mix(in srgb, var(--card) 95%, transparent);backdrop-filter:blur(8px);border-top:1px solid var(--border);box-shadow:0 -8px 24px rgba(15,23,42,.08)}
 .bbar-inner{max-width:48rem;margin:0 auto;padding:.75rem 1rem calc(1rem + env(safe-area-inset-bottom))}
@@ -888,7 +894,7 @@ function renderAsymmetry(sec){
   const f = sec.fields[0];
   const sel = selOf('quirks');
   const cq = (selOf('customQuirk') || [])[0];
-  let h = `<section class="card${state.bypassed.includes('asymmetry') ? ' bypassed' : ''}"><h2>${EMOJI.asymmetry} ${esc(T(f.label))}<button class="bypass${state.bypassed.includes('asymmetry') ? ' on' : ''}" data-bypass="asymmetry" title="${esc(T(BYP_TIP))}" aria-label="${esc(T(BYP_TIP))}">⛔</button></h2><p class="sec-sub">${esc(T('Break the AI symmetry default'))}</p>`;
+  let h = `<section id="sec-asymmetry" class="card${state.bypassed.includes('asymmetry') ? ' bypassed' : ''}"><h2>${EMOJI.asymmetry} ${esc(T(f.label))}<button class="bypass${state.bypassed.includes('asymmetry') ? ' on' : ''}" data-bypass="asymmetry" title="${esc(T(BYP_TIP))}" aria-label="${esc(T(BYP_TIP))}">⛔</button></h2><p class="sec-sub">${esc(T('Break the AI symmetry default'))}</p>`;
   h += `<button class="roll-btn" id="roll-asym">
     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M16 20h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2Z"/><path d="M8 8h1v2"/><path d="M8 14h1v3"/><path d="M4 6h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/><path d="M4 18h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2Z"/></svg>
     ${esc(T('Roll a fresh set of asymmetries'))}</button>`;
@@ -928,7 +934,7 @@ function renderAll(){
   for (const sec of SECTIONS){
     if (sec.special === 'asymmetry'){ h += renderAsymmetry(sec); continue; }
     if (sec.id === 'headPose') h += poseHTML();
-    h += `<section class="card${state.bypassed.includes(sec.id) ? ' bypassed' : ''}"><h2>${EMOJI[sec.id] ? EMOJI[sec.id] + ' ' : ''}${esc(T(sec.title))}<button class="bypass${state.bypassed.includes(sec.id) ? ' on' : ''}" data-bypass="${sec.id}" title="${esc(T(BYP_TIP))}" aria-label="${esc(T(BYP_TIP))}">⛔</button></h2><p class="sec-sub">${esc(T(sec.subtitle || ''))}</p>`;
+    h += `<section id="sec-${sec.id}" class="card${state.bypassed.includes(sec.id) ? ' bypassed' : ''}"><h2>${EMOJI[sec.id] ? EMOJI[sec.id] + ' ' : ''}${esc(T(sec.title))}<button class="bypass${state.bypassed.includes(sec.id) ? ' on' : ''}" data-bypass="${sec.id}" title="${esc(T(BYP_TIP))}" aria-label="${esc(T(BYP_TIP))}">⛔</button></h2><p class="sec-sub">${esc(T(sec.subtitle || ''))}</p>`;
     for (const f of sec.fields){
       if (f.id === 'ethnicity'){
         h += renderField(f);
@@ -1550,6 +1556,40 @@ langSel.value = lang;
 langSel.onchange = () => setLang(langSel.value);
 applyStaticI18n();
 renderAll();
+
+/* ===================== left rail navigation ===================== */
+(function railNav(){
+  const nav = document.createElement('nav');
+  nav.className = 'rail';
+  nav.setAttribute('aria-label', 'Section navigation');
+  for (const sec of SECTIONS){
+    const b = document.createElement('button');
+    b.className = 'rail-dash';
+    b.dataset.sec = sec.id;
+    b.title = T(sec.title);
+    b.setAttribute('aria-label', T(sec.title));
+    b.onclick = () => document.getElementById('sec-' + sec.id)?.scrollIntoView({behavior: 'smooth', block: 'start'});
+    nav.appendChild(b);
+  }
+  document.body.appendChild(nav);
+  let raf = 0;
+  const upd = () => {
+    raf = 0;
+    const vh = innerHeight;
+    for (let i = 0; i < SECTIONS.length; i++){
+      const el = document.getElementById('sec-' + SECTIONS[i].id);
+      const d = nav.children[i];
+      if (!el || !d) continue;
+      const r = el.getBoundingClientRect();
+      /* highlighted while the section is in the viewport */
+      d.classList.toggle('on', r.top <= vh * 0.85 && r.bottom >= vh * 0.1);
+    }
+  };
+  const queue = () => { if (!raf) raf = requestAnimationFrame(upd); };
+  addEventListener('scroll', queue, {passive: true});
+  addEventListener('resize', queue);
+  upd();
+})();
 </script>
 </body>
 </html>
