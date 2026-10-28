@@ -1290,36 +1290,51 @@ const ROLL_DETAIL_PROB = 0.30;
 const HAIR_LEN_CLASS = {'Bald / fully shaved':[],'Buzz cut':[],'Very short':[1],'Short':[1],'Ear-length':[1,2],'Chin-length':[1,2],'Long bob (lob)':[2],'Shoulder-length':[2],'Mid-back length':[2,3],'Waist-length':[3],'Extremely long':[3],'Tapered':[1],'Mullet':[1,2],'French twist':[2,3],'Double bun':[2,3],'Braided crown':[2,3]};
 const HAIR_CUT_CLASS = {'Pixie cut':[1],'Bixie':[1],'Micro bob':[1],'French bob':[1,2],'Blunt bob':[1,2],'Wavy bob':[1,2],'Collarbone lob':[2],'Wolf cut':[1,2,3],'Shag cut':[1,2,3],'Butterfly cut':[1,2,3],'Layered cut':[1,2,3],'Asymmetrical cut':[1,2,3],'Feathered cut':[1,2,3],'Hime cut':[1,2,3],'Curtain bangs':[1,2,3],'Beach waves':[2,3],'Loose curls':[2,3],'Messy bun':[2,3],'High ponytail':[2,3],'Half-up half-down':[2,3]};
 const GRAY_STRONG = new Set(['Salt and pepper','Mostly gray','Fully gray / silver']);
+/* mixed-heritage rolls: 'ab und zu' — x2 common, x3 rare, x4 almost never (same
+   combination as surprise(n): Mixed first, then n concrete heritages) */
+const ROLL_MIX_PROB = 0.25;
 function rollOne(f, sel, pick){
-  /* one option for f, consistent with the picks already in sel. null = skip field. */
+  /* options for f, consistent with the picks already in sel. [] = skip field. */
+  if (f.id === 'ethnicity'){
+    if (Math.random() < ROLL_MIX_PROB){
+      const r = Math.random();
+      const n = r < 0.6 ? 2 : r < 0.9 ? 3 : 4;
+      const mixed = f.options.find(o => o.term === 'mixed heritage');
+      const pool = f.options.filter(o => o.term !== 'mixed heritage');
+      const out = [mixed];
+      while (out.length < n + 1 && pool.length) out.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
+      return out;
+    }
+    return [pick(f.options)];
+  }
   if (f.id === 'hairstyle'){
     const len = sel.hairLength && sel.hairLength[0] && sel.hairLength[0].label;
     if (len){
       const cls = HAIR_LEN_CLASS[len];
       if (cls === undefined) return pick(f.options);
-      if (!cls.length) return null;
+      if (!cls.length) return [];
       const cuts = f.options.filter(o => (HAIR_CUT_CLASS[o.label] || [1,2,3]).some(c => cls.includes(c)));
-      if (cuts.length) return pick(cuts);
+      if (cuts.length) return [pick(cuts)];
     }
-    return pick(f.options);
+    return [pick(f.options)];
   }
   if (f.id === 'hairLength'){
     const cut = sel.hairstyle && sel.hairstyle[0] && sel.hairstyle[0].label;
     if (cut){
       const cls = HAIR_CUT_CLASS[cut] || [1,2,3];
       const ok = f.options.filter(o => (HAIR_LEN_CLASS[o.label] || [1,2,3]).some(c => cls.includes(c)));
-      if (ok.length) return pick(ok);
+      if (ok.length) return [pick(ok)];
     }
-    return pick(f.options);
+    return [pick(f.options)];
   }
   if (f.id === 'hairColor'){
     const gray = sel.hairGray && sel.hairGray[0] && sel.hairGray[0].label;
     if (gray && GRAY_STRONG.has(gray)){
       const naturals = f.options.filter(o => o.label !== 'Platinum' && o.label !== 'Dyed, unnatural');
-      if (naturals.length) return pick(naturals);
+      if (naturals.length) return [pick(naturals)];
     }
   }
-  return pick(f.options);
+  return [pick(f.options)];
 }
 document.getElementById('roll').onclick = () => {
   /* core look always, details by weight, hair consistent (KISS: no new UI) */
@@ -1329,8 +1344,8 @@ document.getElementById('roll').onclick = () => {
     if (isBypassed(f.id)){ if (state.selections[f.id] && state.selections[f.id].length) sel[f.id] = state.selections[f.id]; continue; }
     if (f.type !== 'text' && f.options && f.options.length){
       if (!(ROLL_CORE.has(f.id) || Math.random() < ROLL_DETAIL_PROB)) continue;
-      const o = rollOne(f, sel, pick);
-      if (o) sel[f.id] = [o];
+      const opts = rollOne(f, sel, pick);
+      if (opts.length) sel[f.id] = opts;
     }
   }
   state.selections = sel;
@@ -1346,7 +1361,7 @@ document.getElementById('roll-keep').onclick = () => {
   for (const f of ALL_FIELDS){
     if (isBypassed(f.id) || f.id === 'ethnicTraits') continue;
     if (f.type !== 'text' && f.options && f.options.length && !(state.selections[f.id] && state.selections[f.id].length)){
-      const o = rollOne(f, state.selections, pick); if (o) state.selections[f.id] = [o];
+      const opts = rollOne(f, state.selections, pick); if (opts.length) state.selections[f.id] = opts;
       rolled++;
       if (f.id === 'ethnicity') rolledEth = true;
     }
