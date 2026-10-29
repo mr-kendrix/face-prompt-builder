@@ -922,6 +922,7 @@ function ethnicityBlock(){
 
 function renderAsymmetry(sec){
   const f = sec.fields[0];
+  const byQ = isBypassed('quirks') ? ' bypassed' : '';
   const sel = selOf('quirks');
   const cq = (selOf('customQuirk') || [])[0];
   let h = `<section id="sec-asymmetry" class="card${state.bypassed.includes('asymmetry') ? ' bypassed' : ''}"><h2><span class="sec-title">${EMOJI.asymmetry} ${esc(T(f.label))}</span><button class="bypass${state.bypassed.includes('asymmetry') ? ' on' : ''}" data-bypass="asymmetry" title="${esc(T(BYP_TIP))}" aria-label="${esc(T(BYP_TIP))}">⛔</button></h2><p class="sec-sub">${esc(T('Break the AI symmetry default'))}</p>`;
@@ -930,7 +931,7 @@ function renderAsymmetry(sec){
     ${esc(T('Roll a fresh set of asymmetries'))}</button>`;
   const qIcons = ICONS['quirks'];
   if (qIcons){
-    h += `<div class="field"><div class="shape-grid">`;
+    h += `<div class="field${byQ}"><div class="shape-grid">`;
     for (const o of f.options){
       const on = sel.some(s => s.label === o.label);
       const inner = qIcons[o.label] || '';
@@ -939,14 +940,14 @@ function renderAsymmetry(sec){
     }
     h += `</div></div>`;
   } else {
-    h += `<div class="field"><div class="chips">`;
+    h += `<div class="field${byQ}"><div class="chips">`;
     for (const o of f.options){
       const on = sel.some(s => s.label === o.label);
       h += `<button class="chip${on?' on':''}" data-ms="quirks" data-label="${esc(o.label)}">${on?'✓ ':''}${esc(T(o.label))}</button>`;
     }
     h += `</div></div>`;
   }
-  h += `<div class="field"><label for="in-customQuirk">${esc(T(CUSTOM_QUIRK.label))}</label>`;
+  h += `<div class="field${byQ}"><label for="in-customQuirk">${esc(T(CUSTOM_QUIRK.label))}</label>`;
   h += `<p class="hint">${esc(T(CUSTOM_QUIRK.hint))}</p>`;
   h += `<input type="text" id="in-customQuirk" data-text="customQuirk" placeholder="${esc(T(CUSTOM_QUIRK.placeholder))}" value="${esc(cq ? cq.label : '')}"/></div>`;
   h += `</section>`;
