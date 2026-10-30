@@ -796,7 +796,7 @@ function renderField(f){
   const bbtn = (SEC_OF[f.id] === 'framing' || SEC_OF[f.id] === 'facialHair' || SEC_OF[f.id] === 'asymmetry') ? '' : `<button class="bypass${by ? ' on' : ''}" data-bypass="${f.id}" title="${esc(T(BYP_TIP))}" aria-label="${esc(T(BYP_TIP))}">⛔</button>`;
   if (f.type === 'text'){
     const cur = (selOf(f.id) || [])[0];
-    h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label for="in-${f.id}">${esc(T(f.label))}</label>${bbtn}</div>`;
+    h += `<div class="field${by ? ' bypassed' : ''}" data-fid="${f.id}"><div class="fld-head"><label for="in-${f.id}">${esc(T(f.label))}</label>${bbtn}</div>`;
     if (f.hint) h += `<p class="hint">${esc(T(f.hint))}</p>`;
     h += `<input type="text" id="in-${f.id}" data-text="${f.id}" placeholder="${esc(T(f.placeholder||''))}" value="${esc(cur ? cur.label : '')}"/></div>`;
     return h;
@@ -806,7 +806,7 @@ function renderField(f){
     if (f.id === 'lipstick'){
       const cur = selOf(f.id)[0];
       const colors = SWATCHES[f.id];
-      h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label>${esc(T(f.label))}</label>${bbtn}</div>`;
+      h += `<div class="field${by ? ' bypassed' : ''}" data-fid="${f.id}"><div class="fld-head"><label>${esc(T(f.label))}</label>${bbtn}</div>`;
       if (f.hint) h += `<p class="hint">${esc(T(f.hint))}</p>`;
       h += `<div class="swatch-grid">`;
       for (const o of f.options){
@@ -820,7 +820,7 @@ function renderField(f){
     }
     if (icons){
       const cur = selOf(f.id)[0];
-      h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label>${esc(T(f.label))}</label>${bbtn}</div>`;
+      h += `<div class="field${by ? ' bypassed' : ''}" data-fid="${f.id}"><div class="fld-head"><label>${esc(T(f.label))}</label>${bbtn}</div>`;
       if (f.hint) h += `<p class="hint">${esc(T(f.hint))}</p>`;
       h += `<div class="shape-grid">`;
       for (const o of f.options){
@@ -835,7 +835,7 @@ function renderField(f){
     if (f.id === 'eyeColor'){
       const cur = selOf(f.id)[0];
       const colors = SWATCHES[f.id];
-      h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label>${esc(T(f.label))}</label>${bbtn}</div>`;
+      h += `<div class="field${by ? ' bypassed' : ''}" data-fid="${f.id}"><div class="fld-head"><label>${esc(T(f.label))}</label>${bbtn}</div>`;
       if (f.hint) h += `<p class="hint">${esc(T(f.hint))}</p>`;
       h += `<div class="swatch-grid">`;
       for (const o of f.options){
@@ -855,7 +855,7 @@ function renderField(f){
     }
     if (colors){
       const cur = selOf(f.id)[0];
-      h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label>${esc(T(f.label))}</label>${bbtn}</div>`;
+      h += `<div class="field${by ? ' bypassed' : ''}" data-fid="${f.id}"><div class="fld-head"><label>${esc(T(f.label))}</label>${bbtn}</div>`;
       if (f.hint) h += `<p class="hint">${esc(T(f.hint))}</p>`;
       h += `<div class="swatch-grid">`;
       for (const o of f.options){
@@ -872,7 +872,7 @@ function renderField(f){
       return h;
     }
     const cur = selOf(f.id)[0];
-    h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label for="sel-${f.id}">${esc(T(f.label))}</label>${bbtn}</div>`;
+    h += `<div class="field${by ? ' bypassed' : ''}" data-fid="${f.id}"><div class="fld-head"><label for="sel-${f.id}">${esc(T(f.label))}</label>${bbtn}</div>`;
     if (f.hint) h += `<p class="hint">${esc(T(f.hint))}</p>`;
     h += `<select id="sel-${f.id}" data-select="${f.id}"><option value="">—</option>`;
     for (const o of f.options) h += `<option value="${esc(o.label)}"${cur && cur.label === o.label ? ' selected' : ''}>${esc(T(o.label))}</option>`;
@@ -882,7 +882,7 @@ function renderField(f){
   /* multiselect */
   const sel = selOf(f.id);
   const msIcons = ICONS[f.id];
-  h += `<div class="field${by ? ' bypassed' : ''}"><div class="fld-head"><label>${esc(T(f.label))}</label>${bbtn}</div>`;
+  h += `<div class="field${by ? ' bypassed' : ''}" data-fid="${f.id}"><div class="fld-head"><label>${esc(T(f.label))}</label>${bbtn}</div>`;
   if (f.hint) h += `<p class="hint">${esc(T(f.hint))}</p>`;
   if (msIcons){
     h += `<div class="shape-grid">`;
@@ -910,7 +910,7 @@ function ethnicityBlock(){
   const label = c.length > 1 ? 'Combined heritage characteristics (pick any)' : `${c[0] || 'Heritage'} characteristics (pick any)`;
   const pool = [], seen = new Set();
   for (const e of sel) for (const t of e.traits || []) if (!seen.has(t.label)) { seen.add(t.label); pool.push(t); }
-  let h = `<div class="field${isBypassed('ethnicity') || isBypassed('ethnicTraits') ? ' bypassed' : ''}"><p class="hint" style="opacity:1;font-weight:500">${esc(T('Random blend:'))}</p><div class="chips">`;
+  let h = `<div class="field${isBypassed('ethnicity') || isBypassed('ethnicTraits') ? ' bypassed' : ''}" data-fid="ethnicTraits"><p class="hint" style="opacity:1;font-weight:500">${esc(T('Random blend:'))}</p><div class="chips">`;
   h += `<button class="chip" id="surprise-2">${esc(T('Surprise ×2'))}</button>`;
   h += `<button class="chip" id="surprise-3">${esc(T('Surprise ×3'))}</button>`;
   h += `<button class="chip" id="surprise-4">${esc(T('Surprise ×4'))}</button>`;
@@ -938,7 +938,7 @@ function renderAsymmetry(sec){
     ${esc(T('Roll a fresh set of asymmetries'))}</button>`;
   const qIcons = ICONS['quirks'];
   if (qIcons){
-    h += `<div class="field${byQ}"><div class="shape-grid">`;
+    h += `<div class="field${byQ}" data-fid="quirks"><div class="shape-grid">`;
     for (const o of f.options){
       const on = sel.some(s => s.label === o.label);
       const inner = qIcons[o.label] || '';
@@ -947,14 +947,14 @@ function renderAsymmetry(sec){
     }
     h += `</div></div>`;
   } else {
-    h += `<div class="field${byQ}"><div class="chips">`;
+    h += `<div class="field${byQ}" data-fid="quirks"><div class="chips">`;
     for (const o of f.options){
       const on = sel.some(s => s.label === o.label);
       h += `<button class="chip${on?' on':''}" data-ms="quirks" data-label="${esc(o.label)}">${on?'✓ ':''}${esc(T(o.label))}</button>`;
     }
     h += `</div></div>`;
   }
-  h += `<div class="field${byQ}"><label for="in-customQuirk">${esc(T(CUSTOM_QUIRK.label))}</label>`;
+  h += `<div class="field${byQ}" data-fid="customQuirk"><label for="in-customQuirk">${esc(T(CUSTOM_QUIRK.label))}</label>`;
   h += `<p class="hint">${esc(T(CUSTOM_QUIRK.hint))}</p>`;
   h += `<input type="text" id="in-customQuirk" data-text="customQuirk" placeholder="${esc(T(CUSTOM_QUIRK.placeholder))}" value="${esc(cq ? cq.label : '')}"/></div>`;
   h += `</section>`;
@@ -966,6 +966,40 @@ function poseHTML(){
     <div class="pose-head-row"><span class="t1">${esc(T('Pose preview'))}</span><span class="t2">${esc(T('outline, follows the settings'))}</span></div>
     <div class="pose-holder" id="pose-holder"></div></div>`;
 }
+
+/* ===================== bypass collapse =====================
+   Bypassed SECTION  -> only the first row of the first field stays visible (other fields hidden, roll btn hidden)
+   Bypassed FIELD    -> only the first row of that field's options stays visible
+   Recomputed on every renderAll + on window resize (row width is dynamic). */
+function bypassFirstRowOnly(el){
+  el.querySelectorAll('.shape-grid, .swatch-grid, .chips').forEach(g => {
+    const kids = [...g.children];
+    if (kids.length < 2) return;
+    const top0 = kids[0].offsetTop;
+    for (const k of kids) if (k.offsetTop > top0 + 1){ k.dataset.bypHide = '1'; k.style.display = 'none'; }
+  });
+}
+function applyBypassCollapse(){
+  /* clear previous pass: everything visible first, then re-hide per current state */
+  document.querySelectorAll('#main [data-bypHide]').forEach(k => { delete k.dataset.bypHide; k.style.display = ''; });
+  for (const sec of SECTIONS){
+    const el = document.getElementById('sec-' + sec.id);
+    if (!el) continue;
+    const fields = [...el.querySelectorAll(':scope > .field')];
+    if (state.bypassed.includes(sec.id)){
+      fields.forEach((f, i) => { if (i > 0){ f.dataset.bypHide = '1'; f.style.display = 'none'; } });
+      if (fields[0]) bypassFirstRowOnly(fields[0]);
+      el.querySelectorAll('.roll-btn').forEach(b => { b.dataset.bypHide = '1'; b.style.display = 'none'; });
+    } else {
+      for (const f of sec.fields){
+        if (!state.bypassed.includes(f.id)) continue;
+        const fel = el.querySelector('.field[data-fid="' + f.id + '"]');
+        if (fel) bypassFirstRowOnly(fel);
+      }
+    }
+  }
+}
+window.addEventListener('resize', applyBypassCollapse);
 
 function renderAll(){
   let h = '';
@@ -987,6 +1021,7 @@ function renderAll(){
   bind();
   updateBar();
   renderPose();
+  applyBypassCollapse();
 }
 
 /* ===================== pose preview: three.js port of the original VK scene ===================== */
