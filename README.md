@@ -12,7 +12,7 @@ Pick options across **17 sections** — face shape, hair, eyes, cosmetics, style
 
 ## Quick start
 
-1. [⬇️ Download the app (ZIP)](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) and unzip it
+1. [⬇️ Download the app (ZIP)](https://raw.githubusercontent.com/mr-kendrix/face-prompt-builder/main/face_prompt_builder_offline_v2.zip) and unzip it
 2. Open `face_prompt_builder_offline_v2.html` (in the unzipped folder) in any modern browser — Chrome, Firefox, Safari, Edge
 3. Pick options (or roll the 🎲), copy the prompt, paste it into your image tool
 
@@ -21,6 +21,7 @@ No server. No internet. No account. No install.
 ## Features
 
 - **17 sections, 696 options, 647 hand-drawn icons** — single- and multi-select, every category can be bypassed with one click
+- **⛔ Bypass collapse** — a bypassed section shrinks to the first row of its first field; a bypassed field keeps only its first row of options (the rest stays out of the prompt)
 - **🎲 Random roll** — re-roll everything, or fill only the empty slots while your picks stay pinned
 - **✍️ Krea-2 optimizer** — rewrites the tag list as a natural-language scene description
 - **✨ LLM prompt optimizer** — a local LLM distills your selection into a compact, non-overloaded Krea-2 scene (it drafts a short story internally, only clean prose comes out)
@@ -53,7 +54,7 @@ Free for personal, hobby and student use — **not licensed for commercial use**
 **Was ist das?** Wähle in **17 Abschnitten** — Gesichtsform, Haare, Augen, Kosmetik, Stil & Ausstrahlung, Licht, Kamera, Kopfhaltung… — und die App baut daraus einen detaillierten **englischen Prompt** für Bildmodelle (Stable Diffusion, Krea 2, moderne Bild-LLMs). **647 handgezeichnete Icons** machen jede Option auf einen Blick sichtbar.
 
 **Schnellstart**
-1. [⬇️ App als ZIP herunterladen](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) und entpacken
+1. [⬇️ App als ZIP herunterladen](https://raw.githubusercontent.com/mr-kendrix/face-prompt-builder/main/face_prompt_builder_offline_v2.zip) und entpacken
 2. `face_prompt_builder_offline_v2.html` (im entpackten Ordner) in jedem modernen Browser öffnen — Chrome, Firefox, Safari, Edge
 3. Optionen wählen (oder 🎲 würfeln), Prompt kopieren, ins Bildtool einfügen
 
@@ -61,6 +62,7 @@ Kein Server. Kein Internet. Kein Konto. Keine Installation.
 
 **Features**
 - **17 Abschnitte, 696 Optionen, 647 handgezeichnete Icons** — Einzel- und Mehrfachauswahl, jede Kategorie lässt sich mit einem Klick überspringen
+- **⛔ Bypass-Kollaps** — eine übersprungene Sektion zeigt nur die erste Zeile ihres ersten Feldes; ein übersprungenes Feld behält nur die erste Zeile seiner Optionen (der Rest bleibt aus dem Prompt draußen)
 - **🎲 Zufalls-Würfel** — alles neu würfeln, oder nur die leeren Slots füllen (deine Auswahl bleibt fixiert)
 - **✍️ Krea-2-Optimierer** — schreibt die Tag-Liste als Szenenbeschreibung in natürlicher Sprache um
 - **✨ LLM-Prompt-Optimierer** — ein lokales LLM destilliert deine Auswahl zu einer kompakten, nicht überladenen Krea-2-Szene (intern wird eine kurze Geschichte entworfen, heraus kommt nur sauberer Fließtext)
@@ -84,7 +86,7 @@ Alle Gesichter sind fiktive Erwachsene (18+); die App stellt nie echte Personen 
 **C'est quoi ?** Choisissez des options dans **17 sections** — forme du visage, cheveux, yeux, maquillage, style, éclairage, caméra, pose de la tête… — et l'application compose un **prompt anglais** détaillé pour les modèles d'image (Stable Diffusion, Krea 2, LLM d'image modernes). **647 icônes dessinées à la main** rendent chaque option visible d'un coup d'œil.
 
 **Démarrage rapide**
-1. [⬇️ Télécharger l'application (ZIP)](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) et l'extraire
+1. [⬇️ Télécharger l'application (ZIP)](https://raw.githubusercontent.com/mr-kendrix/face-prompt-builder/main/face_prompt_builder_offline_v2.zip) et l'extraire
 2. Ouvrir `face_prompt_builder_offline_v2.html` (dans le dossier extrait) dans n'importe quel navigateur moderne — Chrome, Firefox, Safari, Edge
 3. Choisir des options (ou lancer le 🎲), copier le prompt, le coller dans votre outil d'image
 
@@ -92,6 +94,7 @@ Aucun serveur. Aucun internet. Aucun compte. Aucune installation.
 
 **Fonctionnalités**
 - **17 sections, 696 options, 647 icônes dessinées à la main** — sélection simple et multiple, chaque catégorie se passe d'un clic
+- **⛔ Bypass replié** — une section bypassée ne montre que la première ligne de son premier champ ; un champ bypassé ne garde que sa première ligne d'options (le reste reste hors du prompt)
 - **🎲 Lancer aléatoire** — tout relancer, ou ne remplir que les cases vides (vos choix restent fixés)
 - **✍️ Optimiseur Krea-2** — réécrit la liste de tags en description de scène en langage naturel
 - **✨ Optimiseur de prompt par LLM** — un LLM local distille votre sélection en une scène Krea-2 compacte, sans surcharge (une courte histoire est rédigée en interne, seul un texte propre est renvoyé)
@@ -115,7 +118,7 @@ Tous les visages sont des adultes fictifs (18+) ; l'application ne représente j
 **¿Qué es?** Elige opciones en **17 secciones** — forma del rostro, pelo, ojos, maquillaje, estilo, iluminación, cámara, pose de la cabeza… — y la aplicación compone un **prompt en inglés** detallado para modelos de imagen (Stable Diffusion, Krea 2, LLM de imagen modernos). **647 iconos dibujados a mano** hacen que cada opción sea visible de un vistazo.
 
 **Inicio rápido**
-1. [⬇️ Descarga la aplicación (ZIP)](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) y descomprímela
+1. [⬇️ Descarga la aplicación (ZIP)](https://raw.githubusercontent.com/mr-kendrix/face-prompt-builder/main/face_prompt_builder_offline_v2.zip) y descomprímela
 2. Abre `face_prompt_builder_offline_v2.html` (en la carpeta descomprimida) en cualquier navegador moderno — Chrome, Firefox, Safari, Edge
 3. Elige opciones (o lanza el 🎲), copia el prompt y pégalo en tu herramienta de imagen
 
@@ -123,6 +126,7 @@ Sin servidor. Sin internet. Sin cuenta. Sin instalación.
 
 **Características**
 - **17 secciones, 696 opciones, 647 iconos dibujados a mano** — selección simple y múltiple, cada categoría se puede omitir con un clic
+- **⛔ Bypass plegado** — una sección omitida muestra solo la primera fila de su primer campo; un campo omitido conserva solo su primera fila de opciones (el resto queda fuera del prompt)
 - **🎲 Sorteo aleatorio** — relanzar todo, o rellenar solo las casillas vacías (tus elecciones quedan fijas)
 - **✍️ Optimizador Krea-2** — reescribe la lista de etiquetas como descripción de escena en lenguaje natural
 - **✨ Optimizador de prompts por LLM** — un LLM local destila tu selección en una escena Krea-2 compacta, sin sobrecargar (redacta una historia corta en interno, solo sale prosa limpia)
@@ -146,7 +150,7 @@ Todos los rostros son adultos ficticios (18+); la aplicación nunca representa p
 **Что это?** Выбирайте опции в **17 разделах** — форма лица, волосы, глаза, макияж, стиль, свет, камера, поза головы… — и приложение собирает из этого подробный **английский промпт** для моделей генерации изображений (Stable Diffusion, Krea 2, современные image-LLM). **647 рисованных иконок** делают каждый вариант понятным с первого взгляда.
 
 **Быстрый старт**
-1. [⬇️ Скачайте приложение (ZIP)](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) и распакуйте его
+1. [⬇️ Скачайте приложение (ZIP)](https://raw.githubusercontent.com/mr-kendrix/face-prompt-builder/main/face_prompt_builder_offline_v2.zip) и распакуйте его
 2. Откройте `face_prompt_builder_offline_v2.html` (из распакованной папки) в любом современном браузере — Chrome, Firefox, Safari, Edge
 3. Выберите опции (или бросьте 🎲), скопируйте промпт и вставьте в ваш инструмент генерации
 
@@ -154,6 +158,7 @@ Todos los rostros son adultos ficticios (18+); la aplicación nunca representa p
 
 **Возможности**
 - **17 разделов, 696 опций, 647 рисованных иконок** — одиночный и множественный выбор, любой раздел можно пропустить одним кликом
+- **⛔ Свёрнутый bypass** — пропущенный раздел показывает только первую строку своего первого поля; пропущенное поле оставляет только первую строку опций (остальное остаётся вне промпта)
 - **🎲 Случайный ролл** — перебросить всё, или заполнить только пустые слоты (ваши выборы остаются закреплёнными)
 - **✍️ Оптимизатор Krea-2** — переписывает список тегов в описание сцены естественным языком
 - **✨ LLM-оптимизатор промпта** — локальная LLM сжимает ваш выбор в компактную, не перегруженную сцену Krea-2 (внутри черновик короткой истории, наружу — только чистый текст)
@@ -177,7 +182,7 @@ Todos los rostros son adultos ficticios (18+); la aplicación nunca representa p
 **这是什么？** 在 **17 个分区** 中挑选选项——脸型、发型、眼睛、妆容、风格气质、光线、镜头、头部姿态……——应用会为你生成一条详细的**英文提示词**，适用于图像模型（Stable Diffusion、Krea 2 及现代图像 LLM）。**647 个手绘图标**让每个选项一目了然。
 
 **快速上手**
-1. [⬇️ 下载应用（ZIP）](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) 并解压
+1. [⬇️ 下载应用（ZIP）](https://raw.githubusercontent.com/mr-kendrix/face-prompt-builder/main/face_prompt_builder_offline_v2.zip) 并解压
 2. 用任意现代浏览器打开解压后文件夹中的 `face_prompt_builder_offline_v2.html`——Chrome、Firefox、Safari、Edge
 3. 选择选项（或掷骰子 🎲），复制提示词，粘贴到你的图像工具中
 
@@ -185,6 +190,7 @@ Todos los rostros son adultos ficticios (18+); la aplicación nunca representa p
 
 **功能**
 - **17 个分区、696 个选项、647 个手绘图标**——单选/多选，每个分区都可一键跳过
+- **⛔ 旁路折叠**——跳过的分区只显示其第一个字段的第一行；被跳过的字段只保留第一行选项（其余内容不进入提示词）
 - **🎲 随机生成**——全部重掷，或只填充空选项（已选内容保持不变）
 - **✍️ Krea-2 优化器**——将标签列表改写为自然语言的场景描述
 - **✨ LLM 提示词优化器**——本地 LLM 将你的选择浓缩为紧凑、不冗长的 Krea-2 场景（内部生成简短故事，输出只有干净的文字）
