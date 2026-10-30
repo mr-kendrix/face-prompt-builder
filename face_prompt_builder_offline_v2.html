@@ -337,9 +337,14 @@ function touch(){ state.manualPrompt = null; save(); renderAll(); }
 
 /* ===================== prompt logic (original Ew/Ow assembly, plain terms) ===================== */
 function buildPrompt(){
-  const n = [BASE];
+  const n = [];
   const add = r => { if (isBypassed(r)) return; for (const i of state.selections[r] || []) i.term && n.push(i.term); };
-  for (const id of PRIORITY) add(id);
+  /* subject: "adult <archetype> <age> woman" — identity terms woven in front of 'woman' */
+  const subj = ['archetype', 'age']
+    .filter(id => !isBypassed(id))
+    .flatMap(id => (state.selections[id] || []).map(i => i.term).filter(Boolean));
+  n.push(subj.length ? 'adult ' + subj.join(', ') + ' woman' : 'adult woman');
+  for (const id of PRIORITY) if (id !== 'archetype' && id !== 'age') add(id);
   for (const s of SECTIONS) for (const f of s.fields) if (!PRIORITY.includes(f.id)) add(f.id);
   return n.join(', ');
 }
