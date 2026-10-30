@@ -8,7 +8,7 @@
 
 ## What is it?
 
-Pick options across **17 sections** — face shape, hair, eyes, cosmetics, style & vibe, lighting, camera, head pose… — and the app assembles a detailed **English prompt** for image models (Stable Diffusion, Krea 2 and modern image LLMs). **647 hand-drawn icons** make every option visible at a glance, so you can build a face the way you'd describe it to an artist.
+Pick options across **17 sections** — face shape, hair, eyes, cosmetics, style & vibe, lighting, camera, head pose… — and the app assembles a detailed **English prompt** for image models (Stable Diffusion, Krea 2 and modern image LLMs). **677 hand-drawn icons** make every option visible at a glance, so you can build a face the way you'd describe it to an artist.
 
 ## Quick start
 
@@ -20,7 +20,7 @@ No server. No internet. No account. No install.
 
 ## Features
 
-- **17 sections, 696 options, 647 hand-drawn icons** — single- and multi-select, every category can be bypassed with one click
+- **17 sections, 726 options, 677 hand-drawn icons** — single- and multi-select, every category can be bypassed with one click
 - **🎲 Random roll** — re-roll everything, or fill only the empty slots while your picks stay pinned
 - **✍️ Krea-2 optimizer** — rewrites the tag list as a natural-language scene description
 - **✨ LLM prompt optimizer** — a local LLM distills your selection into a compact, non-overloaded Krea-2 scene (it drafts a short story internally, only clean prose comes out)
@@ -50,7 +50,7 @@ Free for personal, hobby and student use — **not licensed for commercial use**
 <details>
 <summary>🇩🇪 Deutsch</summary>
 
-**Was ist das?** Wähle in **17 Abschnitten** — Gesichtsform, Haare, Augen, Kosmetik, Stil & Ausstrahlung, Licht, Kamera, Kopfhaltung… — und die App baut daraus einen detaillierten **englischen Prompt** für Bildmodelle (Stable Diffusion, Krea 2, moderne Bild-LLMs). **647 handgezeichnete Icons** machen jede Option auf einen Blick sichtbar.
+**Was ist das?** Wähle in **17 Abschnitten** — Gesichtsform, Haare, Augen, Kosmetik, Stil & Ausstrahlung, Licht, Kamera, Kopfhaltung… — und die App baut daraus einen detaillierten **englischen Prompt** für Bildmodelle (Stable Diffusion, Krea 2, moderne Bild-LLMs). **677 handgezeichnete Icons** machen jede Option auf einen Blick sichtbar.
 
 **Schnellstart**
 1. [⬇️ App als ZIP herunterladen](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) und entpacken
@@ -60,7 +60,7 @@ Free for personal, hobby and student use — **not licensed for commercial use**
 Kein Server. Kein Internet. Kein Konto. Keine Installation.
 
 **Features**
-- **17 Abschnitte, 696 Optionen, 647 handgezeichnete Icons** — Einzel- und Mehrfachauswahl, jede Kategorie lässt sich mit einem Klick überspringen
+- **17 Abschnitte, 726 Optionen, 677 handgezeichnete Icons** — Einzel- und Mehrfachauswahl, jede Kategorie lässt sich mit einem Klick überspringen
 - **🎲 Zufalls-Würfel** — alles neu würfeln, oder nur die leeren Slots füllen (deine Auswahl bleibt fixiert)
 - **✍️ Krea-2-Optimierer** — schreibt die Tag-Liste als Szenenbeschreibung in natürlicher Sprache um
 - **✨ LLM-Prompt-Optimierer** — ein lokales LLM destilliert deine Auswahl zu einer kompakten, nicht überladenen Krea-2-Szene (intern wird eine kurze Geschichte entworfen, heraus kommt nur sauberer Fließtext)
@@ -81,7 +81,7 @@ Alle Gesichter sind fiktive Erwachsene (18+); die App stellt nie echte Personen 
 <details>
 <summary>🇫🇷 Français</summary>
 
-**C'est quoi ?** Choisissez des options dans **17 sections** — forme du visage, cheveux, yeux, maquillage, style, éclairage, caméra, pose de la tête… — et l'application compose un **prompt anglais** détaillé pour les modèles d'image (Stable Diffusion, Krea 2, LLM d'image modernes). **647 icônes dessinées à la main** rendent chaque option visible d'un coup d'œil.
+**C'est quoi ?** Choisissez des options dans **17 sections** — forme du visage, cheveux, yeux, maquillage, style, éclairage, caméra, pose de la tête… — et l'application compose un **prompt anglais** détaillé pour les modèles d'image (Stable Diffusion, Krea 2, LLM d'image modernes). **677 icônes dessinées à la main** rendent chaque option visible d'un coup d'œil.
 
 **Démarrage rapide**
 1. [⬇️ Télécharger l'application (ZIP)](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) et l'extraire
@@ -91,7 +91,7 @@ Alle Gesichter sind fiktive Erwachsene (18+); die App stellt nie echte Personen 
 Aucun serveur. Aucun internet. Aucun compte. Aucune installation.
 
 **Fonctionnalités**
-- **17 sections, 696 options, 647 icônes dessinées à la main** — sélection simple et multiple, chaque catégorie se passe d'un clic
+- **17 sections, 726 options, 677 icônes dessinées à la main** — sélection simple et multiple, chaque catégorie se passe d'un clic
 - **🎲 Lancer aléatoire** — tout relancer, ou ne remplir que les cases vides (vos choix restent fixés)
 - **✍️ Optimiseur Krea-2** — réécrit la liste de tags en description de scène en langage naturel
 - **✨ Optimiseur de prompt par LLM** — un LLM local distille votre sélection en une scène Krea-2 compacte, sans surcharge (une courte histoire est rédigée en interne, seul un texte propre est renvoyé)
@@ -112,7 +112,7 @@ Tous les visages sont des adultes fictifs (18+) ; l'application ne représente j
 <details>
 <summary>🇪🇸 Español</summary>
 
-**¿Qué es?** Elige opciones en **17 secciones** — forma del rostro, pelo, ojos, maquillaje, estilo, iluminación, cámara, pose de la cabeza… — y la aplicación compone un **prompt en inglés** detallado para modelos de imagen (Stable Diffusion, Krea 2, LLM de imagen modernos). **647 iconos dibujados a mano** hacen que cada opción sea visible de un vistazo.
+**¿Qué es?** Elige opciones en **17 secciones** — forma del rostro, pelo, ojos, maquillaje, estilo, iluminación, cámara, pose de la cabeza… — y la aplicación compone un **prompt en inglés** detallado para modelos de imagen (Stable Diffusion, Krea 2, LLM de imagen modernos). **677 iconos dibujados a mano** hacen que cada opción sea visible de un vistazo.
 
 **Inicio rápido**
 1. [⬇️ Descarga la aplicación (ZIP)](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) y descomprímela
@@ -122,7 +122,7 @@ Tous les visages sont des adultes fictifs (18+) ; l'application ne représente j
 Sin servidor. Sin internet. Sin cuenta. Sin instalación.
 
 **Características**
-- **17 secciones, 696 opciones, 647 iconos dibujados a mano** — selección simple y múltiple, cada categoría se puede omitir con un clic
+- **17 secciones, 726 opciones, 677 iconos dibujados a mano** — selección simple y múltiple, cada categoría se puede omitir con un clic
 - **🎲 Sorteo aleatorio** — relanzar todo, o rellenar solo las casillas vacías (tus elecciones quedan fijas)
 - **✍️ Optimizador Krea-2** — reescribe la lista de etiquetas como descripción de escena en lenguaje natural
 - **✨ Optimizador de prompts por LLM** — un LLM local destila tu selección en una escena Krea-2 compacta, sin sobrecargar (redacta una historia corta en interno, solo sale prosa limpia)
@@ -143,7 +143,7 @@ Todos los rostros son adultos ficticios (18+); la aplicación nunca representa p
 <details>
 <summary>🇷🇺 Русский</summary>
 
-**Что это?** Выбирайте опции в **17 разделах** — форма лица, волосы, глаза, макияж, стиль, свет, камера, поза головы… — и приложение собирает из этого подробный **английский промпт** для моделей генерации изображений (Stable Diffusion, Krea 2, современные image-LLM). **647 рисованных иконок** делают каждый вариант понятным с первого взгляда.
+**Что это?** Выбирайте опции в **17 разделах** — форма лица, волосы, глаза, макияж, стиль, свет, камера, поза головы… — и приложение собирает из этого подробный **английский промпт** для моделей генерации изображений (Stable Diffusion, Krea 2, современные image-LLM). **677 рисованных иконок** делают каждый вариант понятным с первого взгляда.
 
 **Быстрый старт**
 1. [⬇️ Скачайте приложение (ZIP)](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) и распакуйте его
@@ -153,7 +153,7 @@ Todos los rostros son adultos ficticios (18+); la aplicación nunca representa p
 Без сервера. Без интернета. Без аккаунта. Без установки.
 
 **Возможности**
-- **17 разделов, 696 опций, 647 рисованных иконок** — одиночный и множественный выбор, любой раздел можно пропустить одним кликом
+- **17 разделов, 726 опций, 677 рисованных иконок** — одиночный и множественный выбор, любой раздел можно пропустить одним кликом
 - **🎲 Случайный ролл** — перебросить всё, или заполнить только пустые слоты (ваши выборы остаются закреплёнными)
 - **✍️ Оптимизатор Krea-2** — переписывает список тегов в описание сцены естественным языком
 - **✨ LLM-оптимизатор промпта** — локальная LLM сжимает ваш выбор в компактную, не перегруженную сцену Krea-2 (внутри черновик короткой истории, наружу — только чистый текст)
@@ -174,7 +174,7 @@ Todos los rostros son adultos ficticios (18+); la aplicación nunca representa p
 <details>
 <summary>🇨🇳 中文</summary>
 
-**这是什么？** 在 **17 个分区** 中挑选选项——脸型、发型、眼睛、妆容、风格气质、光线、镜头、头部姿态……——应用会为你生成一条详细的**英文提示词**，适用于图像模型（Stable Diffusion、Krea 2 及现代图像 LLM）。**647 个手绘图标**让每个选项一目了然。
+**这是什么？** 在 **17 个分区** 中挑选选项——脸型、发型、眼睛、妆容、风格气质、光线、镜头、头部姿态……——应用会为你生成一条详细的**英文提示词**，适用于图像模型（Stable Diffusion、Krea 2 及现代图像 LLM）。**677 个手绘图标**让每个选项一目了然。
 
 **快速上手**
 1. [⬇️ 下载应用（ZIP）](https://github.com/mr-kendrix/face-prompt-builder/archive/refs/heads/main.zip) 并解压
@@ -184,7 +184,7 @@ Todos los rostros son adultos ficticios (18+); la aplicación nunca representa p
 无需服务器。无需联网。无需账号。无需安装。
 
 **功能**
-- **17 个分区、696 个选项、647 个手绘图标**——单选/多选，每个分区都可一键跳过
+- **17 个分区、726 个选项、677 个手绘图标**——单选/多选，每个分区都可一键跳过
 - **🎲 随机生成**——全部重掷，或只填充空选项（已选内容保持不变）
 - **✍️ Krea-2 优化器**——将标签列表改写为自然语言的场景描述
 - **✨ LLM 提示词优化器**——本地 LLM 将你的选择浓缩为紧凑、不冗长的 Krea-2 场景（内部生成简短故事，输出只有干净的文字）
